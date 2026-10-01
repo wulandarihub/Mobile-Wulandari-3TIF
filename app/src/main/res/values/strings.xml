@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Oreo Delight</string>
+    <string name="btn_my_project">My Project</string>
+    <string name="oreo_tag">BISKUIT FAVORIT DUNIA</string>
+    <string name="oreo_title">Oreo Original Sandwich</string>
+    <string name="oreo_desc">Biskuit sandwich cokelat renyah dengan krim vanila lembut di dalamnya. Cara asyik menikmatinya: Diputar, Dijilat, lalu Dicelupin ke segelas susu hangat!</string>
+    <string name="nutrition_section_title">Informasi Nilai Gizi</string>
+    <string name="nutrition_serving_info">Takaran Saji: 3 Keping (28.5g) • Energi Total 140 kkal</string>
+    <string name="nutri_cal_title">Energi Total</string>
+    <string name="nutri_cal_val">140 kkal</string>
+    <string name="nutri_fat_title">Lemak Total</string>
+    <string name="nutri_fat_val">6 gram</string>
+    <string name="nutri_sugar_title">Gula &amp; Karbohidrat</string>
+    <string name="nutri_sugar_val">20 gram</string>
+    <string name="nutri_protein_title">Protein</string>
+    <string name="nutri_protein_val">1.5 gram</string>
+    <string name="btn_dunk_guide">Klik untuk lebih detail</string>
+</resources>
