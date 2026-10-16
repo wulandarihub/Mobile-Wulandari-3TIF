@@ -12,5 +12,13 @@ class SnackActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySnackBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // 1. Jadikan toolbar sebagai ActionBar
+        setSupportActionBar(binding.toolbarSnack)
+
+        // 2. Aksi tombol kembali (Back Arrow) pada Toolbar
+        binding.toolbarSnack.setNavigationOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 }

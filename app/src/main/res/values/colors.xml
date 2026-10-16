@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="bg_cream_oreo">#FDFBF6</color>
-    <color name="oreo_blue">#3399DB</color>
-    <color name="text_dark">#2C2C2B</color>
-    <color name="oreo_bg">#F4F8FC</color>
-    <color name="oreo_primary">#005CA9</color>
-    <color name="oreo_card_white">#FFFFFF</color>
-    <color name="oreo_pill_bg">#E2EEF8</color>
-    <color name="text_main">#1E293B</color>
+    <!-- Color Palette Redesign SEMAWIT -->
+    <color name="primary_green">#2C6B3F</color>
+    <color name="secondary_orange">#F99D34</color>
+    <color name="tertiary_red">#C32E3A</color>
+    <color name="quaternary_brown">#95633C</color>
+
+    <!-- Warna Khusus Halaman SEMAWIT (Yang dicari activity_web.xml) -->
+    <color name="semawit_btn_green">#00875A</color>
+    <color name="semawit_dark_green">#063D2A</color>
+
+    <color name="bg_light">#F5F8F6</color>
+    <color name="card_white">#FFFFFFFF</color>
+    <color name="text_dark">#1E293B</color>
     <color name="text_muted">#64748B</color>
+    <color name="input_border">#2C6B3F</color>
+
+    <!-- Warna Netral -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+
+    <!-- Warna Pendukung Halaman Snack Oreo -->
+    <color name="oreo_bg">#F4F7FB</color>
+    <color name="oreo_card_white">#FFFFFFFF</color>
+    <color name="oreo_pill_bg">#E6F0FA</color>
+    <color name="oreo_primary">#0066B2</color>
+    <color name="text_main">#1A1A1A</color>
 </resources>
