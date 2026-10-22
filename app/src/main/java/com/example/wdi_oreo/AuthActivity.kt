@@ -39,17 +39,8 @@ class AuthActivity : AppCompatActivity() {
                 editor.putString("username", username)
                 editor.apply()
 
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, BaseActivity::class.java))
                 finish()
-            } else {
-                AlertDialog.Builder(this)
-                    .setTitle("Gagal")
-                    .setMessage("Silahkan coba lagi")
-                    .setPositiveButton("OK") { dialog, _ ->
-                        dialog.dismiss()
-                    }
-                    .show()
             }
         }
     }
