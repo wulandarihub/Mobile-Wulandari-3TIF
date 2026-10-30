@@ -1,5 +1,6 @@
 package com.example.wdi_oreo
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,6 +29,22 @@ class ProfileFragment : Fragment() {
         binding.btnBackToHome.setOnClickListener {
             val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavView)
             bottomNav.selectedItemId = R.id.nav_home
+        }
+        // Event klik tombol Bagikan Info Aplikasi
+        binding.btnShareApp.setOnClickListener {
+            val shareText = """
+        *WDI Oreo - SEMAWIT App*
+        Aplikasi manajemen kebun dan hasil panen kelapa sawit KUD SEMAWIT.
+        Dikembangkan oleh: Wulan Dari (Teknik Informatika).
+    """.trimIndent()
+
+            val intent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_TEXT, shareText)
+            }
+
+            // Memunculkan Android Share Sheet chooser
+            startActivity(Intent.createChooser(intent, "Bagikan informasi via:"))
         }
     }
 

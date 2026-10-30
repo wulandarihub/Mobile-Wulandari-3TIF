@@ -53,7 +53,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingHorizontal="24dp"
-            android:paddingTop="12dp">
+            android:paddingTop="12dp"
+            android:paddingBottom="32dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -94,6 +95,18 @@
                 android:text="Proyek: SEMAWIT &amp; WDI Oreo"
                 android:textColor="#333333"
                 android:textSize="16sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShareApp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:text="Bagikan Info Aplikasi"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:backgroundTint="@color/primary_green"
+                app:cornerRadius="8dp" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
