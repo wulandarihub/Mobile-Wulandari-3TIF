@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light"
+    android:padding="28dp">
+
+    <ImageView
+        android:id="@+id/ivOnboard3"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:contentDescription="Harga TBS Real-Time"
+        android:src="@drawable/logo_semawit"
+        app:layout_constraintBottom_toTopOf="@+id/tvOnboardTitle3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvOnboardTitle3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="Harga TBS &amp; Katalog Saprotan"
+        android:textColor="@color/semawit_dark_green"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvOnboardDesc3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivOnboard3" />
+
+    <TextView
+        android:id="@+id/tvOnboardDesc3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:text="Cek pembaruan harga sawit terkini serta ketersediaan pupuk dan alat panen di KUD SEMAWIT."
+        android:textColor="@color/text_muted"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnMulai"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOnboardTitle3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnMulai"
+        android:layout_width="200dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/semawit_btn_green"
+        android:text="Mulai Sekarang"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:cornerRadius="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOnboardDesc3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

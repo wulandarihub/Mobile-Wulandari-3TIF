@@ -1,278 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/oreo_bg"
-    android:orientation="vertical">
+    android:background="@color/bg_light"
+    tools:context=".SnackActivity">
 
-    <!-- 1. Toolbar berada di luar ScrollView agar diam di bagian atas layar -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarSnack"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/primary_green"
-        app:navigationIcon="@drawable/ic_arrow_back"
-        app:title="Detail Snack Oreo"
-        app:titleTextColor="@color/white" />
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    <!-- 2. ScrollView membungkus konten isi yang dapat digulung -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarSnack"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary_green"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="Detail Komoditas Sawit"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:clipToPadding="false"
+        android:padding="20dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="24dp"
-            android:paddingVertical="20dp">
+            android:orientation="vertical">
 
-            <!-- Gambar Hero Oreo dalam Card Melengkung -->
+            <!-- Kartu Ilustrasi Komoditas -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:layout_marginTop="8dp"
-                app:cardBackgroundColor="@color/oreo_card_white"
-                app:cardCornerRadius="28dp"
-                app:cardElevation="2dp">
+                android:layout_height="180dp"
+                app:cardBackgroundColor="@color/card_white"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="3dp">
 
                 <ImageView
-                    android:id="@+id/imgOreo"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="16dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/oreo_snack" />
+                    android:id="@+id/ivKomoditasHero"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Komoditas TBS Sawit"
+                    android:src="@drawable/logo_semawit" />
             </androidx.cardview.widget.CardView>
 
-            <!-- Category Chip / Badge -->
+            <!-- Badge Kategori -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@color/oreo_pill_bg"
+                android:layout_marginTop="16dp"
+                android:background="@color/card_white"
                 android:paddingHorizontal="12dp"
-                android:paddingVertical="4dp"
-                android:text="@string/oreo_tag"
-                android:textColor="@color/oreo_primary"
+                android:paddingVertical="6dp"
+                android:text="KOMODITAS UNGGULAN KUD SETARA"
+                android:textColor="@color/semawit_btn_green"
                 android:textSize="11sp"
                 android:textStyle="bold" />
 
-            <!-- Judul Produk -->
+            <!-- Judul Komoditas -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/oreo_title"
-                android:textColor="@color/text_main"
+                android:text="TBS Kelapa Sawit Varietas Tenera"
+                android:textColor="@color/text_dark"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <!-- Deskripsi Produk -->
+            <!-- Deskripsi Komoditas -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingExtra="3dp"
-                android:text="@string/oreo_desc"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="Tandan Buah Segar (TBS) hasil panen anggota KOPSA SETARA dengan tingkat kematangan optimal (fraksi 2 &amp; 3), rendemen minyak tinggi, dan pencatatan timbangan transparan."
                 android:textColor="@color/text_muted"
                 android:textSize="14sp" />
 
-            <!-- Header Seksi Gizi -->
+            <!-- Judul Spesifikasi Mutu -->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/nutrition_section_title"
-                android:textColor="@color/text_main"
+                android:layout_marginTop="20dp"
+                android:text="Standar Mutu Sortasi PKS"
+                android:textColor="@color/semawit_dark_green"
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="@string/nutrition_serving_info"
+                android:layout_marginBottom="12dp"
+                android:text="Acuan Penetapan Harga Dinas Perkebunan Riau"
                 android:textColor="@color/text_muted"
                 android:textSize="12sp" />
 
-            <!-- List Baris Gizi 1: Kalori -->
+            <!-- Baris 1: Rendemen CPO -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardBackgroundColor="@color/oreo_card_white"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp">
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/card_white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="14dp">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/nutri_cal_title"
-                        android:textColor="@color/text_main"
+                        android:layout_weight="1"
+                        android:text="Rendemen CPO (OER)"
+                        android:textColor="@color/text_dark"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:background="@color/oreo_pill_bg"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="4dp"
-                        android:text="@string/nutri_cal_val"
-                        android:textColor="@color/oreo_primary"
-                        android:textSize="13sp"
+                        android:text="22,5% – 24,0%"
+                        android:textColor="@color/semawit_btn_green"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
-                </RelativeLayout>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- List Baris Gizi 2: Lemak -->
+            <!-- Baris 2: Kadar ALB -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:cardBackgroundColor="@color/oreo_card_white"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp">
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/card_white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="14dp">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/nutri_fat_title"
-                        android:textColor="@color/text_main"
+                        android:layout_weight="1"
+                        android:text="Asam Lemak Bebas (ALB)"
+                        android:textColor="@color/text_dark"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:background="@color/oreo_pill_bg"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="4dp"
-                        android:text="@string/nutri_fat_val"
-                        android:textColor="@color/oreo_primary"
-                        android:textSize="13sp"
+                        android:text="Maks. 3,0%"
+                        android:textColor="@color/primary_green"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
-                </RelativeLayout>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- List Baris Gizi 3: Gula/Karbo -->
+            <!-- Baris 3: Alokasi Tabungan Perawatan -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:cardBackgroundColor="@color/oreo_card_white"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp">
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/card_white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="14dp">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/nutri_sugar_title"
-                        android:textColor="@color/text_main"
+                        android:layout_weight="1"
+                        android:text="Potongan Tabungan Pupuk"
+                        android:textColor="@color/text_dark"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:background="@color/oreo_pill_bg"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="4dp"
-                        android:text="@string/nutri_sugar_val"
-                        android:textColor="@color/oreo_primary"
-                        android:textSize="13sp"
+                        android:text="10% / Panen"
+                        android:textColor="@color/secondary_orange"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
-                </RelativeLayout>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- List Baris Gizi 4: Protein -->
+            <!-- Baris 4: Harga Acuan TBS -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:cardBackgroundColor="@color/oreo_card_white"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="14dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/nutri_protein_title"
-                        android:textColor="@color/text_main"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:background="@color/oreo_pill_bg"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="4dp"
-                        android:text="@string/nutri_protein_val"
-                        android:textColor="@color/oreo_primary"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Tombol Aksi Bawah Khas Oreo -->
-            <Button
-                android:id="@+id/btnDunk"
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:layout_marginTop="28dp"
                 android:layout_marginBottom="20dp"
-                android:backgroundTint="@color/oreo_primary"
-                android:text="@string/btn_dunk_guide"
-                android:textAllCaps="false"
+                app:cardBackgroundColor="@color/card_white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Harga TBS Umur 10–20 Thn"
+                        android:textColor="@color/text_dark"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp 3.180 / kg"
+                        android:textColor="@color/semawit_btn_green"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tombol Aksi -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDetailMore"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:backgroundTint="@color/semawit_btn_green"
+                android:text="Kembali ke Beranda SEMAWIT"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                app:cornerRadius="27dp" />
+                android:textStyle="bold"
+                app:cornerRadius="14dp" />
 
         </LinearLayout>
     </ScrollView>
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

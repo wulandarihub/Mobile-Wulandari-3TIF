@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.wdi_oreo.databinding.FragmentHomeBinding
 import java.util.Calendar
+import kotlin.jvm.java
 
 class HomeFragment : Fragment() {
 
@@ -74,6 +75,15 @@ class HomeFragment : Fragment() {
 
             datePickerDialog.show()
         }
+
+        binding.btnOnboarding.setOnClickListener {
+            startActivity(Intent(requireContext(), OnboardingActivity::class.java))
+        }
+
+        binding.btnToSnackActivity.setOnClickListener {
+            startActivity(Intent(requireContext(), SnackActivity::class.java))
+        }
+
     }
 
     override fun onDestroyView() {
